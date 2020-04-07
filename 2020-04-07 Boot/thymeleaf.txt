@@ -1,0 +1,11 @@
+spring boot는 jsp를 권장하지 않기 때문에 thymeleaf를 사용하여 html에서 값을 뽑아야한다.
+
+ <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+   </dependency>
+
+기본적으로 자동 설정이 적용되고, 모든 동적으로 생성되는 view들은 src - main - resources - templates 에서 찾게된다.
+
+* 절대 jsp랑 같이 쓰지 말것 에러남
+
