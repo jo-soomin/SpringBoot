@@ -1,0 +1,6 @@
+spring boot 폴더 구조
+src
+└─ main
+   └─ resource
+      └─ templates (View: Thymeleaf, Groovy, Velocity 등)
+      └─ static    (정적 컨텐츠 : html, css, js, image 등)
