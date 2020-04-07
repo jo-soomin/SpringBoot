@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.board.test.mapper.boardMapper">
+
+	<select id="board" resultType="com.board.test.dto.boardDto">
+		SELECT ID,PW,NAME
+		FROM MYBOARD
+	</select>
+
+	<select id="list" parameterType="com.board.test.dto.boardDto"
+		resultType="com.board.test.dto.boardDto">
+		SELECT ID,PW,NAME
+		FROM MYBOARD
+	</select>
+
+	<insert id="write" parameterType="com.board.test.dto.boardDto">
+		INSERT INTO MYBOARD
+		VALUES(#{id},#{pw},#{name})
+	</insert>
+
+	<select id="boardList" resultType="com.board.test.dto.boardDto">
+		SELECT ID,PW,NAME
+		FROM MYBOARD
+	</select>
+
+	<delete id="delete" parameterType="String">
+		DELETE FROM MYBOARD
+		WHERE ID = #{id}
+	</delete>
+
+	<select id="one" parameterType="String" resultType="com.board.test.dto.boardDto">
+		SELECT ID,PW,NAME
+		FROM MYBOARD
+		WHERE ID = #{id}
+	</select>
+	
+	<update id="update" parameterType="com.board.test.dto.boardDto">
+		UPDATE MYBOARD
+		SET PW = #{pw}, NAME = #{name} 
+		WHERE ID = #{id}
+	</update>
+</mapper>

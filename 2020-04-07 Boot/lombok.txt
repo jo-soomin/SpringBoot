@@ -1,0 +1,16 @@
+lombok -- getter, setter 자동으로 만들어줌
+
+dto , @Data 어노테이션
+
+https://projectlombok.org/download
+
+cmd
+java -jar lombok.jar
+
+
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.12</version> <-- 자기가 다운받은 jar 파일 버전
+    <scope>provided</scope>
+</dependency>
