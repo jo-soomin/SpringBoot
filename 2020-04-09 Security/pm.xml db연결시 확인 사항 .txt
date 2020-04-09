@@ -1,0 +1,2 @@
+spring.datasource.schema=classpath:init.sql --> 해당 sql 문을 실행하여 디비를 구축한다.
+spring.datasource.initialization-mode=never --> 해당  프로젝트를 실행 할 때마다 sql문을 실행하지 않는다.(always : 항상 실행한다.)
