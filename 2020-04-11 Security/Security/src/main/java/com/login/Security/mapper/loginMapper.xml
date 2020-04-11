@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.login.Security.mapper.loginMapper">
+	<insert id="signup" parameterType="com.login.Security.dto.loginDto">
+		INSERT INTO USERT VALUES (#{username},#{password}, 1,'GUEST')
+	</insert>
+	<select id="selectOne" parameterType="String" resultType="com.login.Security.dto.loginDto">
+		SELECT * FROM USERT
+		 WHERE USERNAME = #{username}
+	</select>
+
+</mapper>

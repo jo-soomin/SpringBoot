@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.login.Security.mapper.boardMapper">
+	<insert id="write" parameterType="com.login.Security.dto.boardDto">
+	INSERT INTO USERBOARD VALUES(#{username}, #{title}, #{content})
+	</insert>
+	
+	<select id="selectlist" parameterType="String" resultType="com.login.Security.dto.boardDto">
+		SELECT * FROM USERBOARD 
+		WHERE USERNAME = #{username}
+	</select>
+	<select id="selectAll" resultType="com.login.Security.dto.boardDto">
+		SELECT * FROM USERBOARD
+	</select>
+</mapper>
