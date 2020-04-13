@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.login.Security.mapper.boardMapper">
+	<insert id="write"	parameterType="com.login.Security.dto.boardDto">
+		INSERT INTO USERBOARD(USERNAME,TITLE,CONTENT) VALUES(#{username}, #{title}, #{content})
+	</insert>
+
+	<select id="selectlist" parameterType="String"	resultType="com.login.Security.dto.boardDto">
+		SELECT * FROM USERBOARD
+		WHERE USERNAME = #{username}
+	</select>
+	<select id="selectAll"	resultType="com.login.Security.dto.boardDto">
+		SELECT * FROM USERBOARD
+	</select>
+
+	<select id="selectOne" parameterType="String"	resultType="com.login.Security.dto.boardDto">
+		SELECT * FROM USERBOARD
+		WHERE BOARDSEQ = #{seq}
+	</select>
+	
+	<update id="update" parameterType="com.login.Security.dto.boardDto">
+		UPDATE USERBOARD
+		SET TITLE = #{title}, CONTENT = #{content}
+		WHERE BOARDSEQ = #{boardseq};
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		DELETE FROM USERBOARD
+		WHERE BOARDSEQ = #{seq};
+	</delete>
+</mapper>

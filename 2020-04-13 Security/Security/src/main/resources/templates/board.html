@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>게시판</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>글번호</th>
+			<th>작성자</th>
+			<th>제목</th>
+		</tr>
+		<tr th:each="board : ${dto}">
+			<td><a th:href="'detail?seq='+${board.boardseq}" th:text="${board.boardseq}"></a></td>
+			<td><input type="text" th:value="${board.username}" readonly="readonly"></td>
+			<td><input type="text" th:value="${board.title}" readonly="readonly"></td>
+		</tr>
+	</table>
+	<input type="button" value="글쓰기" onclick="location.href='write'">
+	<input type="button" value="홈으로" onclick="location.href='/'">
+
+
+</body>
+</html>

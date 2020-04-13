@@ -1,0 +1,26 @@
+<html xmlns:th="https://www.thymeleaf.org">
+  <head >
+    <title>Please Login</title>
+  </head>
+  <body>
+        <form name="f" th:action="@{/login}" method="post">               <!-- @{/login} : config의 /login 끝점으로 사용자 이름과 패스워드를 보낸다. 만약 실패시 error를 담아 다시 돌아옴-->
+            <fieldset>
+                <legend>Please Login</legend>
+                <div th:if="${param.error}" class="alert alert-error"> <!-- url에 error가 포함되어있다면 출력 -->    
+                    id와 pw를 확인해주세요.
+                </div>
+                <div th:if="${param.logout}" class="alert alert-success"> 
+                    	로그아웃 되었습니다.
+                </div>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username"/>      <!-- name 속성으로 username, password가 넘어감 -->  
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password"/>    
+                <div class="form-actions">
+                    <button type="submit" class="btn">Log in</button>
+                </div>
+            </fieldset>
+        </form>
+        <a href="/">home</a>
+  </body>
+  </html>
